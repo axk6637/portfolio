@@ -1,169 +1,266 @@
-@@ -0,0 +1,168 @@
+@@ -0,0 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Skills</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <style>
     body {
-      background-color: #0e0e0e;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      height: 100vh;
     }
 
     h1 {
+      color: rgb(21, 168, 212);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
       text-align: center;
-      color: #00fff7;
-      font-size: 3rem;
-      margin-bottom: 30px;
     }
 
-    .skills-container {
-      max-width: 1000px;
-      margin: auto;
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
     }
 
-    .category {
-      margin-bottom: 30px;
+    .breadboard {
+      height: 700px;
+      width: 98%;
+      display: block;
+      
+      z-index: 1;
+      position: relative;
     }
 
-    .category-title {
-      font-size: 1.8rem;
-      color: #00fff7;
-      border-bottom: 2px solid #00fff7;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-
-    .skills-row {
-      display: flex;
-      flex-wrap: wrap; /* Wrap to next line on smaller screens */
-      gap: 20px;
-    }
-
-    .skill {
-      flex: 1 1 250px; /* Flexible box width */
-      background: #2b2b2b;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 255, 247, 0.2);
+    .avatar {
+      background-image: url("me.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      right: 0%;
+      top: 80px;
+      height: 450px;
+      width: 200px;
+      pointer-events: auto;
+      z-index: 10;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .skill:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00fff7;
+    .avatar-pop:hover {
+      transform: scale(1.07);
       cursor: pointer;
     }
 
-    .title {
-      font-size: 1.5rem;
-      color: #00fff7;
-      margin-bottom: 5px;
+    .skills {
+      position: absolute;
+      left: 42px;
+      top: 100px;
+      height: 120px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .subtitle {
-      font-size: 1rem;
-      color: #ccc;
+    .projects {
+      position: absolute;
+      left: 177px;
+      top: 80px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .description {
-      font-size: 1rem;
-      color: white;
+    .achievements {
+      position: absolute;
+      left: 40px;
+      top: 240px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @media (max-width: 600px) {
-      .skills-row {
-        flex-direction: column;
-      }
+    .involvement {
+      position: absolute;
+      left: 175px;
+      top: 244px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .contact {
+      position: absolute;
+      left: 92px;
+      top: 410px;
+      height: 150px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .github {
+      position: absolute;
+      left: 100px;
+      top: 580px;
+      height: 60px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .linkedin {
+      position: absolute;
+      left: 175px;
+      top: 580px;
+      height: 60px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pop-effect:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+      cursor: pointer;
+    }
+
+    .mailbox {
+      max-width: 700px;
+      width: 90%;
+      margin: 40px auto;
+      background: #121212;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 247, 0.3);
+    }
+
+    /* Add popup overlay styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  width: 90vw;
+  max-width: 600px;
+  height: 80vh;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.popup-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+  background: #181818;
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2rem;
+  color: #ff9800;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+  transition: color 0.2s;
+}
+.popup-close:hover {
+  color: #fff;
+}
   </style>
 </head>
 <body>
-  <h1>💻 My Skillset</h1>
-  <div class="skills-container">
-
-    <div class="category">
-      <div class="category-title">Programming Languages</div>
-      <div class="skills-row">
-        <div class="skill">
-          <div class="title">Python</div>
-          <div class="subtitle">Scripting, data analysis, and AI/ML.</div>
-          <div class="description">Libraries: NumPy, Pandas, SciPy, Scikit-learn.</div>
-        </div>
-        <div class="skill">
-          <div class="title">Java</div>
-          <div class="subtitle">OOP, data structures, file I/O.</div>
-          <div class="description">.</div>
-        </div>
-        <div class="skill">
-          <div class="title">C</div>
-          <div class="subtitle">Systems programming.</div>
-          <div class="description">Pointers, memory, data structures.</div>
-        </div>
-        <div class="skill">
-          <div class="title">JavaScript</div>
-          <div class="subtitle">Dynamic web development.</div>
-          <div class="description">DOM manipulation,form validation.</div>
-        </div>
-        <div class="skill">
-          <div class="title">HTML5</div>
-          <div class="subtitle">Structuring web content.</div>
-          <div class="description">Semantic HTML, forms, tables.</div>
-        </div>
-        <div class="skill">
-          <div class="title">CSS3</div>
-          <div class="subtitle">Styling and layout.</div>
-          <div class="description">Flexbox, Grid, animations, transitions.</div>
-        </div>
+  <div style="display: flex; width: 100vw; height: 100vh;">
+     
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+      <h1>Aashreeya's Starter Pack</h1>
+      <div class="image-wrapper">
+        <div class="avatar avatar-pop" onclick="playPop(); openPopup('aboutme.html')" style="cursor: pointer;" title="About Aashreeya"></div>
+        <img src="bread.png" alt="Breadboard" class="breadboard " onclick="playPop()">
+        <img src="skills.png" alt="Skills" class="skills pop-effect" title="Aashreeya's Skills" onclick="playPop(); openPopup('skills.html')" style="cursor: pointer;">
+        <img src="projects.png" alt="Projects" class="projects pop-effect" onclick="playPop(); openPopup('projects.html')" style="cursor: pointer;" title="Aashreeya's Projects">
+        <img src="achievements.png" alt="Achievements" class="achievements pop-effect" onclick="playPop(); openPopup('bagged.html')" style="cursor: pointer;" title="Aashreeya's Achievements">
+        <img src="involvement.png" alt="Involvement" class="involvement pop-effect" onclick="playPop(); openPopup('involvement.html')" style="cursor: pointer;" title="Aashreeya's Involvement">
+        <img src="contact.png" alt="Contact" class="contact pop-effect" title="Contact Me" onclick="playPop(); openPopup('contact.html')" style="cursor: pointer;">
+        <a href="https://github.com/axk6637" target="_blank">
+          <img src="github.png" alt="GitHub" class="github pop-effect" title="Aashreeya's GitHub" onclick="playPop()">
+        </a>
+        <a href="https://www.linkedin.com/in/aashreeya-k-217914223/" target="_blank">
+          <img src="linkedin.png" alt="LinkedIn" class="linkedin pop-effect" title="Aashreeya's LinkedIn" onclick="playPop()">
+        </a>
       </div>
     </div>
-
-    <div class="category">
-      <div class="category-title">Frameworks</div>
-      <div class="skills-row">
-        <div class="skill">
-          <div class="title">Flask</div>
-          <div class="subtitle">Python microframework.</div>
-          <div class="description">Routing, templates, API integration.</div>
-        </div>
-        <div class="skill">
-          <div class="title">OpenCV</div>
-          <div class="subtitle">Computer vision library.</div>
-          <div class="description">Image processing, object detection.</div>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="category">
-      <div class="category-title">Tools & Version Control</div>
-      <div class="skills-row">
-        <div class="skill">
-          <div class="title">GitHub</div>
-          <div class="subtitle">Version control & collaboration.</div>
-          <div class="description">Pull requests, branching, issues.</div>
-        </div>
-        <div class="skill">
-      <div class="title">VS Code</div>
-      <div class="subtitle">IDEs & editors.</div>
-      <div class="description">Extensions, debugging, Git integration.</div>
-    </div>
-    <div class="skill">
-          <div class="title">Oracle VirtualBox</div>
-          <div class="subtitle">Virtual environments.</div>
-          <div class="description">Development and testing setups.</div>
-        </div>
-      </div>
-    </div>
-
+   
   </div>
+  <!-- Popup overlay for iframe -->
+<div id="popupOverlay" class="popup-overlay" style="display:none;">
+  <div class="popup-content">
+    <button class="popup-close" onclick="closePopup()">&times;</button>
+    <iframe id="popupIframe" src="" allowfullscreen></iframe>
+  </div>
+</div>
+<audio id="clickSound" src="pop.mp3" preload="auto"></audio>
+
+<script>
+function playPop() {
+  document.getElementById('clickSound').currentTime = 0;
+  document.getElementById('clickSound').play();
+  setTimeout(() => {
+    audio.pause();
+    audio.currentTime = 0;
+  }, 50);
+}
+function openPopup(url) {
+  document.getElementById('popupOverlay').style.display = 'flex';
+  document.getElementById('popupIframe').src = url;
+}
+function closePopup() {
+  document.getElementById('popupOverlay').style.display = 'none';
+  document.getElementById('popupIframe').src = '';
+}
+// Optional: Close popup on ESC key
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePopup();
+});
+</script>
 </body>
 </html>
