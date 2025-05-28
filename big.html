@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      height: 100vh;
+    }
+
+    h1 {
+      color: rgb(21, 168, 212);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .breadboard {
+      height: 700px;
+      width: 98%;
+      display: block;
+      
+      z-index: 1;
+      position: relative;
+    }
+
+    .avatar {
+      background-image: url("me.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      right: 0%;
+      top: 80px;
+      height: 450px;
+      width: 200px;
+      pointer-events: auto;
+      z-index: 10;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .avatar-pop:hover {
+      transform: scale(1.07);
+      cursor: pointer;
+    }
+
+    .skills {
+      position: absolute;
+      left: 42px;
+      top: 100px;
+      height: 120px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projects {
+      position: absolute;
+      left: 177px;
+      top: 80px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .achievements {
+      position: absolute;
+      left: 40px;
+      top: 240px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .involvement {
+      position: absolute;
+      left: 175px;
+      top: 244px;
+      height: 160px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact {
+      position: absolute;
+      left: 92px;
+      top: 410px;
+      height: 150px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .github {
+      position: absolute;
+      left: 100px;
+      top: 580px;
+      height: 60px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .linkedin {
+      position: absolute;
+      left: 175px;
+      top: 580px;
+      height: 60px;
+      width: auto;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pop-effect:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+      cursor: pointer;
+    }
+
+    .mailbox {
+      max-width: 700px;
+      width: 90%;
+      margin: 40px auto;
+      background: #121212;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 247, 0.3);
+    }
+
+    .iframe-pane {
+      width: 50%;
+      height: 100%;
+      border: none;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; width: 100vw; height: 100vh;">
+     
+    <iframe id="skillsFrame" class="iframe-pane"></iframe>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+      <h1>Aashreeya's Starter Pack</h1>
+
+      <div class="image-wrapper">
+        <div class="avatar avatar-pop" onclick="toggleSection('aboutme')" style="cursor: pointer;"></div>
+        <img src="bread.png" alt="Breadboard" class="breadboard ">
+        <a onclick="document.getElementById('clickSound').play();">
+          <img src="skills.png" alt="Skills" class="skills pop-effect" title="Aashreeya's Skills" onclick="toggleSection('skills')" style="cursor: pointer;">
+        </a>
+        <img src="projects.png" alt="Projects" class="projects pop-effect">
+
+        
+        <img src="achievements.png" alt="Achievements" class="achievements pop-effect" onclick="toggleSection('achievements')" style="cursor: pointer;">
+
+        
+        <img src="involvement.png" alt="Involvement" class="involvement pop-effect" onclick="toggleSection('involvement')" style="cursor: pointer;">
+
+        <a href="contact.html" onclick="playSoundandNavigate(event, 'contact.html')">
+          <img src="contact.png" alt="Contact" class="contact pop-effect" title="Contact Me">
+        </a> 
+
+        <a href="https://github.com/axk6637" target="_blank">
+          <img src="github.png" alt="GitHub" class="github pop-effect" title="Aashreeya's GitHub" onclick="document.getElementById('clickSound').play();">
+        </a>
+
+        <a href="https://www.linkedin.com/in/aashreeya-k-217914223/" target="_blank">
+          <img src="linkedin.png" alt="LinkedIn" class="linkedin pop-effect" title="Aashreeya's LinkedIn" onclick="document.getElementById('clickSound').play();">
+        </a>
+      </div>
+    </div>
+   
+  </div>
+<audio id="clickSound" src="pop.mp3" preload="auto"></audio>
+
+<script src="scripts.js"></script>
+</body>
+</html>

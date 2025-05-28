@@ -3,169 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+    <script>
+        function redirectBasedOnScreenSize() {
+        const screenWidth = window.innerWidth;
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+        if (screenWidth < 700) {
+            window.location.href = "small.html";
+        } else if (screenWidth >= 700 && screenWidth < 1024) {
+            window.location.href = "big.html";
+        } else {
+            window.location.href = "big.html";
+        }
+        }
 
-    h1 {
-      color: rgb(21, 168, 212);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        redirectBasedOnScreenSize(); // Call the function on page load
 
-    .image-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
-    .breadboard {
-      height: 700px; /* Set a fixed height for the breadboard */
-      width: 98%;
-      display: block;
-      z-index: 1;
-      position: relative;
-    }
-
-    .avatar {
-  background-image: url("me.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  position: absolute; /* needed for layering */
-  right: 0%;
-  top: 80px;
-
-  height: 450px;
-  width: 200px; /* Add a width to make the div visible */
-
-  pointer-events: auto;
-  z-index: 10;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .avatar-pop:hover {
-  transform: scale(1.07);
-  
-  cursor: pointer;
-}
-    .skills {
-        position: absolute;
-        left: 42px;
-        top: 100px;
-        height: 120px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .projects{
-        position: absolute;
-        left: 177px;
-        top: 80px;
-        height: 160px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-   .achievements{
-        position: absolute;
-        left: 40px;
-        top: 240px;
-        height: 160px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .involvement{
-        position: absolute;
-        left: 175px;
-        top: 244px;
-        height: 160px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .contact{
-        position: absolute;
-        left: 92px;
-        top: 410px;
-        height: 150px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .github{
-        position: absolute;
-        left: 100px;
-        top: 580px;
-        height: 60px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .linkedin{
-        position: absolute;
-        left: 175px;
-        top: 580px;
-        height: 60px;
-        width: auto;
-        z-index: 10;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .pop-effect:hover {
-        transform: translateY(-8px) scale(1.05);
-        box-shadow: 
-            0 0 10px #00fff7,
-            0 0 20px #00fff7,
-            0 0 30px #00fff7;
-        cursor: pointer;
-    }
-
-  </style>
+        // Optional: Call the function on window resize to handle dynamic screen changes
+        window.addEventListener('resize', redirectBasedOnScreenSize);
+    </script>
 </head>
 <body>
-  <h1>Welcome to Aashreeya's Land</h1>
-  
-
-  </div>
-  <div class="image-wrapper">
-    <div class="avatar avatar-pop"></div>
-    <img src="bread.png" alt="Breadboard" class="breadboard">
-    
-    <img src="skills.png" alt="Skills" class="skills pop-effect">
-    <img src="projects.png" alt="Projects" class="projects pop-effect">
-    <img src="achievements.png" alt="Achievements" class="achievements pop-effect">
-    <img src="involvement.png" alt="Involvement" class="involvement pop-effect">
-    <img src="contact.png" alt="Contact" class="contact pop-effect">
-    <img src="github.png" alt="GitHub" class="github pop-effect">
-    <img src="linkedin.png" alt="LinkedIn" class="linkedin pop-effect">
-    
-  </div>
+  <p>Redirecting based on your screen size...</p>
 </body>
 </html>

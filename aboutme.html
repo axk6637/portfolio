@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Aashreeya</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00fff7;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: auto;
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 250px;
+      height: 200px;
+      border-radius: 15px;
+      border: 2px solid #00fff7;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.5);
+      object-fit: cover;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+     .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #00fff7;
+    }
+
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .highlight {
+      color: #00fff7;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Me</h1>
+  <div class="about-container">
+    <img src="aboutme.jpeg" alt="Aashreeya's photo" class="profile-pic" onclick="enlargeImage()">
+    <p>Hi! I’m <b>Aashreeya </b>, a Computer Science student whose story, like the tapestry you see behind me, is woven from countless threads. Each bug I fix, each algorithm I master, and each project I build adds a new stitch to the intricate pattern of my learning journey.</p>
+<p>Like a tapestry, my CS journey isn’t linear– it’s a dance of colors and contrasts, challenges and triumphs, errors and solutions. I thrive on creating seamless designs from complex ideas and weaving elegant solutions from tangled threads.</p>
+
+<p>You’ll find me fascinated by the beauty of connections. Connections between ideas, between people, and between moments. I believe each thread has its purpose and I am here to embrace them with open arms.</p>
+
+  </div>
+  <div class="overlay" id="imageOverlay" onclick="closeImage()">
+    <img src="aboutme.jpeg" alt="Enlarged Aashreeya photo">
+  </div>
+    <script>
+    function enlargeImage() {
+      document.getElementById("imageOverlay").style.display = "flex";
+    }
+
+    function closeImage() {
+      document.getElementById("imageOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>

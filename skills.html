@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00fff7;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .skills-container {
+      max-width: 1000px;
+      margin: auto;
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+    }
+
+    .category {
+      margin-bottom: 30px;
+    }
+
+    .category-title {
+      font-size: 1.8rem;
+      color: #00fff7;
+      border-bottom: 2px solid #00fff7;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap; /* Wrap to next line on smaller screens */
+      gap: 20px;
+    }
+
+    .skill {
+      flex: 1 1 250px; /* Flexible box width */
+      background: #2b2b2b;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 247, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00fff7;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      color: #00fff7;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .skills-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💻 My Skillset</h1>
+  <div class="skills-container">
+
+    <div class="category">
+      <div class="category-title">Programming Languages</div>
+      <div class="skills-row">
+        <div class="skill">
+          <div class="title">Python</div>
+          <div class="subtitle">Scripting, data analysis, and AI/ML.</div>
+          <div class="description">Libraries: NumPy, Pandas, SciPy, Scikit-learn.</div>
+        </div>
+        <div class="skill">
+          <div class="title">Java</div>
+          <div class="subtitle">OOP, data structures, file I/O.</div>
+          <div class="description">.</div>
+        </div>
+        <div class="skill">
+          <div class="title">C</div>
+          <div class="subtitle">Systems programming.</div>
+          <div class="description">Pointers, memory, data structures.</div>
+        </div>
+        <div class="skill">
+          <div class="title">JavaScript</div>
+          <div class="subtitle">Dynamic web development.</div>
+          <div class="description">DOM manipulation,form validation.</div>
+        </div>
+        <div class="skill">
+          <div class="title">HTML5</div>
+          <div class="subtitle">Structuring web content.</div>
+          <div class="description">Semantic HTML, forms, tables.</div>
+        </div>
+        <div class="skill">
+          <div class="title">CSS3</div>
+          <div class="subtitle">Styling and layout.</div>
+          <div class="description">Flexbox, Grid, animations, transitions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Frameworks</div>
+      <div class="skills-row">
+        <div class="skill">
+          <div class="title">Flask</div>
+          <div class="subtitle">Python microframework.</div>
+          <div class="description">Routing, templates, API integration.</div>
+        </div>
+        <div class="skill">
+          <div class="title">OpenCV</div>
+          <div class="subtitle">Computer vision library.</div>
+          <div class="description">Image processing, object detection.</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="category">
+      <div class="category-title">Tools & Version Control</div>
+      <div class="skills-row">
+        <div class="skill">
+          <div class="title">GitHub</div>
+          <div class="subtitle">Version control & collaboration.</div>
+          <div class="description">Pull requests, branching, issues.</div>
+        </div>
+        <div class="skill">
+      <div class="title">VS Code</div>
+      <div class="subtitle">IDEs & editors.</div>
+      <div class="description">Extensions, debugging, Git integration.</div>
+    </div>
+    <div class="skill">
+          <div class="title">Oracle VirtualBox</div>
+          <div class="subtitle">Virtual environments.</div>
+          <div class="description">Development and testing setups.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
