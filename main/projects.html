@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00fff7;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .projects-container {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      gap: 30px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00fff7;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1> My Projects</h1>
+  <div class="projects-container">
+
+    <div class="project">
+      <div class="title">GeminEye</div>
+      <div class="subtitle">Technologies: Python, Gemini API, OpenCV, pyttsx3</div>
+      <div class="description">An AI-powered navigation system for individuals with vision impairment using Gemini API.</div>
+      
+    </div>
+
+    <div class="project">
+      <div class="title">Slide-to-Lecture Generator</div>
+      <div class="description">Transforms slide PDFs into narrated lecture videos with AI-generated transcripts and audio.</div>
+      <div class="subtitle">Technologies: FastAPI, ElevenLabs, React, PyMuPDF</div>
+    </div>
+
+    <div class="project">
+      <div class="title">Finance Autofill Tool</div>
+      <div class="description">Streamlines customer data entry for four major financing platforms using automation and AI logic.</div>
+      <div class="subtitle">Technologies: Python, Selenium, Tkinter</div>
+    </div>
+
+    <div class="project">
+      <div class="title">Checkers Game (Multiplayer)</div>
+      <div class="description">A web-based multiplayer Checkers game with bot logic and real-time WebSocket interaction.</div>
+      <div class="subtitle">Technologies: Java, WebSocket, SQLite, HTML/CSS</div>
+    </div>
+
+    <div class="project">
+      <div class="title">IBDP Grade Simulator</div>
+      <div class="description">A fun 2D game simulating the IBDP scoring system using falling subject tiles and score accumulation.</div>
+      <div class="subtitle">Technologies: Python, Pygame</div>
+    </div>
+
+  </div>
+</body>
+</html>
