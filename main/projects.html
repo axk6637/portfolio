@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00fff7;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .projects-container {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      gap: 30px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00fff7;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+
+    .subtitle{
+      font-size: 0.9rem;
+      color: #ccc;
+      font-style: italic;
+    }
+    .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    }
+    .popup-content {
+    background: #181818;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    width: 90vw;
+    max-width: 600px;
+    height: 80vh;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    }
+    .popup-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 18px;
+    background: #181818;
+    }
+    .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 2rem;
+    color: #ff9800;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+    transition: color 0.2s;
+    }
+    .popup-close:hover {
+    color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 My Projects</h1>
+  <div class="project" onClick="playPop(); openPopup('gemineye.html')" style="cursor:pointer;" title="GeminEye Project Details">
+    <div class="title">GeminEye- Winner @HackDay UTA</div>
+    <div class="subtitle">Technologies: Python, Gemini API (Gemini 1.5 flash model), OpenCV, pyttsx3, Base64 </div>
+    <div class="description">
+                <p><b>Description: </b>This is an AI-powered real time navigation assistant that helps individuals with visual impairment to navigate surroundings safely.<br>
+                 <i>Click to learn more :)</i></div>
+        </div>
+    </div>
+
+     <div class="project"onClick="playPop(); openPopup('checkers.html')" style="cursor:pointer;" title="Checkers Project Details">
+        <div class="title">Front End: Checkers</div>
+          <div class="subtitle">Technologies: HTML, CSS, JavaScript, Java WebSockets</div><br>
+        <div class="description"><b>Description: </b>This is a class project where I applied iterative methodology while working in a 3-member Login Group and collaborating with 11 other development teams to develop a
+        secure login system. <br>
+        <i> Click to learn more :)</i>
+    </div>
+
+      
+    </div>
+
+    <div class="project" onClick="playPop(); openPopup('breastcancer.html')" style="cursor:pointer;" title="ML Project Details">
+      <div class="title">Breast Tumor Malignancy Predictor App</div>
+      <div class="subtitle">Technologies: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborm, Streamlit</div><br>
+      <div class="description"><b>Description: </b>This is a machine learning classifier model to predict breast tumor malignancy using the Random Forest algorithm. The model achieved a strong performance with an AUC-ROC score of <strong>0.94</strong>
+      <br> <i> Click to learn more :)</i>
+      </div>
+    </div>
+
+   
+
+  </div>
+<!-- Popup overlay for iframe (if not already present) -->
+<div id="popupOverlay" class="popup-overlay" style="display:none;">
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <iframe id="popupIframe" src="" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Audio for pop sound (if not already present) -->
+<audio id="clickSound" src="pop.mp3" preload="auto"></audio>
+
+</body>
+<script>
+function playPop() {
+    document.getElementById('clickSound').currentTime = 0;
+    document.getElementById('clickSound').play();
+    setTimeout(() => {
+        audio.pause();
+        audio.currentTime = 0;
+    }, 50);
+}
+
+function openPopup(url) {
+    document.getElementById('popupOverlay').style.display = 'flex';
+    document.getElementById('popupIframe').src = url;
+}
+
+function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
+    document.getElementById('popupIframe').src = '';
+}
+
+// Close popup on ESC key
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePopup();
+});
+</script>
+</html>

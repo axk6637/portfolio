@@ -18,6 +18,8 @@ window.toggleSection = function(section) {
             iframe.src = "involvement.html";  
         }else if (section === "aboutme") {
             iframe.src = "aboutme.html";  
+        }else if (section=="projects"){
+            iframe.src= "projects.html";
         }
         iframe.style.display = "block";
         currentSection = section;
@@ -29,7 +31,7 @@ window.toggleSection = function(section) {
     
 }
 
-function playSoundandNavigate(event, url) {
+function playSound(event, url) {
     event.preventDefault(); // Stop immediate navigation
     const audio = document.getElementById('clickSound');
     audio.currentTime = 0;
